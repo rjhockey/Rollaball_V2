@@ -86,7 +86,18 @@ public class PlayerController : MonoBehaviour
 	//  add method to load next scene to feed into Invoke method above
 	void Restart()
 	{
-		// Moves to next scene/level on completion tied to UnityEngine.SceneManagement
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+		if (SceneManager.GetActiveScene().buildIndex < 4)
+		{
+			// Moves to next scene/level on completion tied to UnityEngine.SceneManagement
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		}
+		else
+			Quit();
+	}
+
+	public void Quit()
+	{		
+		Debug.Log("Stop Play");
+		Application.Quit();
 	}
 }
