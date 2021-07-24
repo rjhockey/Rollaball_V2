@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
 	public float restartDelay = 1f;      // sets delay time before next scene loads
 
+
 	
 	void Start()        // At the start of the game..
 	{
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
 			// Run the 'SetCountText()' function (see below)
 			SetCountText();
 		}
+
 	}
 
 	void OnMove(InputValue value)
@@ -77,7 +79,6 @@ public class PlayerController : MonoBehaviour
 			// Set the text value of your 'winText'
 			winTextObject.SetActive(true);
 			
-			// Throws error at end of last scene bc no scene to move to
 			Invoke("Restart", restartDelay);
 
 		}
@@ -95,6 +96,7 @@ public class PlayerController : MonoBehaviour
 			Quit();
 	}
 
+	// should only work on build, put debug to show in console that it is called
 	public void Quit()
 	{		
 		Debug.Log("Stop Play");
